@@ -5,17 +5,6 @@
     box-sizing: border-box;
   }
   
-  body {
-
-    padding-left: 0px;
-    margin: 0 auto;
-    
-  }
-
-.product-image {
-      width: 300px;
-      height: 300px;
-    }
 h1 {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 60px;
@@ -58,4 +47,38 @@ h2 {
 
 body {
     background-color:tomato;
+    padding-left: 0px;
+    margin: 0 auto;
+ }
+
+.product-image {
+  width: 300px;
+  height: 300px;
+ 
+}
+
+.results-container {
+  margin-top: 30px;
+  text-align: center;
+}
+
+canvas {
+  max-width: 1000px;
+  margin-bottom: 100px;
+  margin-left: 50px;
+}
+
+.chart-container {
+  width: 300px;
+  height: 200px;
+}
+
+.chart-container .chart-bar {
+  background-color:Red;
+  height: 10px;
+}
+
+.chart-container .chart-label {
+  font-size: 12px;
+  color: #04074c;
 }

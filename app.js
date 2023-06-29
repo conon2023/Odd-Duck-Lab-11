@@ -2,7 +2,6 @@
 
 const productContainer = document.getElementById('productContainer');
 const productImages = ["bag", "banana", "bathroom", "boots", "breakfast", "bubblegum", "chair", "cthulhu", "dog-duck","dragon", "pen", "pet-sweep", "scissors", "shark", "sweep", "tauntaun", "unicorn", "water-can", "wine-glass"];
-
 let numRounds = 25; // Default number of rounds
 
 // Constructor function for creating a product object
@@ -88,24 +87,53 @@ function productClickHandler(event) {
 }
 
 // Event listener for "View Results" button click
-function showResults() {
-  // Remove the "View Results" button
-  this.remove();
+  function showResults() {
+
 
   // Sort the products based on votes received
   const sortedProducts = products.sort((a, b) => b.votes - a.votes);
 
-  // Create a report of results
-  const resultsContainer = document.createElement('div');
-  resultsContainer.classList.add('results-container');
+  // Create arrays for labels and data
+  const labels = sortedProducts.map((product) => product.name);
+  const votesData = sortedProducts.map((product) => product.votes);
+  const timesShownData = sortedProducts.map((product) => product.timesShown);
 
-  sortedProducts.forEach((product) => {
-    const productResult = document.createElement('p');
-    productResult.textContent = `${product.name} had ${product.votes} vote${product.votes !== 1 ? 's' : ''}, and was seen ${product.timesShown} time${product.timesShown !== 1 ? 's' : ''}.`;
-    resultsContainer.appendChild(productResult);
+  // Create a chart canvas
+  const canvas = document.createElement('canvas');
+  canvas.id = 'resultsChart';
+  document.body.appendChild(canvas);
+
+  // Draw the bar chart
+  const ctx = canvas.getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: labels,
+      datasets: [
+        {
+          label: 'Votes',
+          data: votesData,
+          backgroundColor: 'rgba(75, 192, 192, 0.5)',
+          borderColor: 'rgba(75, 192, 192, 1)',
+          borderWidth: 1
+        },
+        {
+          label: 'Times Shown',
+          data: timesShownData,
+          backgroundColor: 'rgba(54, 162, 235, 0.5)',
+          borderColor: 'rgba(54, 162, 235, 1)',
+          borderWidth: 1
+        }
+      ]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
   });
-
-  document.body.appendChild(resultsContainer);
 }
 
 // Attach event listener to product container
