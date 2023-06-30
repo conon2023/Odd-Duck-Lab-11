@@ -73,12 +73,12 @@ canvas {
   height: 200px;
 }
 
-.chart-container .chart-bar {
-  background-color:Red;
-  height: 10px;
+#darkButton {
+  background-color: #333;
+  color: #fff;
 }
 
-.chart-container .chart-label {
-  font-size: 12px;
-  color: #04074c;
+#lightButton {
+  background-color: #f5f5f5;
+  color: #333;
 }

@@ -1,7 +1,7 @@
 'use strict';
 
 const productContainer = document.getElementById('productContainer');
-const productImages = ["bag", "banana", "bathroom", "boots", "breakfast", "bubblegum", "chair", "cthulhu", "dog-duck", "dragon", "pen", "pet-sweep", "scissors", "shark", "sweep", "tauntaun", "unicorn", "water-can", "wine-glass"];
+const productImages = ["bag", "banana", "bathroom", "boots", "breakfast", "bubblegum", "chair", "cthulhu", "dog-duck","dragon", "pen", "pet-sweep", "scissors", "shark", "sweep", "tauntaun", "unicorn", "water-can", "wine-glass"];
 let numRounds = 25; // Default number of rounds
 
 // Constructor function for creating a product object
@@ -56,6 +56,7 @@ function displayRandomProducts() {
     viewResultsButton.textContent = 'View Results';
     viewResultsButton.addEventListener('click', showResults);
     document.body.appendChild(viewResultsButton);
+    saveVotingData(); // Save voting data before showing results
     return;
   }
 
@@ -71,7 +72,7 @@ function displayRandomProducts() {
   }
 
   numRounds--;
-}
+
 
 // Event listener for product click
 function productClickHandler(event) {
@@ -141,4 +142,4 @@ function showResults() {
 productContainer.addEventListener('click', productClickHandler);
 
 // Display initial random products
-displayRandomProducts();
+displayRandomProducts();}
