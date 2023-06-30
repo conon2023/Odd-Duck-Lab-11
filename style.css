@@ -36,14 +36,23 @@ h2 {
 
 
 
-#productContainer {
+/* #productContainer {
     border: solid;
     border-style: dashed;
     border-width: 100px;
     justify-content: right;
     margin-left: 200px;
     margin-right: 200px;
+} */
+
+#productContainer {
+  border: solid;
+  border-style: dashed;
+  border-width: 100px;
+  margin: 0 auto;
+  text-align: center;
 }
+
 
 body {
     background-color:tomato;

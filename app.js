@@ -114,16 +114,18 @@ function showResults() {
         {
           label: 'Votes',
           data: votesData,
-          backgroundColor: 'rgba(75, 192, 192, 0.5)',
-          borderColor: 'rgba(75, 192, 192, 1)',
-          borderWidth: 1
+          backgroundColor: 'black',
+          borderColor: 'yellow',
+          borderWidth: 2,
+          barThickness:10,
         },
         {
           label: 'Times Shown',
           data: timesShownData,
-          backgroundColor: 'rgba(54, 162, 235, 0.5)',
-          borderColor: 'rgba(54, 162, 235, 1)',
-          borderWidth: 1
+          backgroundColor: 'red',
+          borderColor: 'white',
+          borderWidth: 2,
+          barThickness:10,
         }
       ]
     },
